@@ -4,13 +4,14 @@ pragma solidity >=0.4.22 <0.8.17;
 contract Adoption {
   address[16] public adopters;
 
-  // Adopting a pet
-  function adopt(uint petId) public returns (uint) {
-    require(petId >= 0 && petId <= 15);
+  // Adopting a avatar
+  function adopt(uint avatarId) public returns (uint) {
 
-    adopters[petId] = msg.sender;
+    require(avatarId >= 0 && avatarId <= 15);
 
-    return petId;
+    adopters[avatarId] = msg.sender;
+
+    return avatarId;
   }
 
   // Retrieving the adopters
