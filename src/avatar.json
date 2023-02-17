@@ -4,127 +4,127 @@
     "name": "CSM - 01",
     "picture": "images/3.jpg",
     "age": 3,
-    "breed": "Scottish Terrier",
+    "breed": "Cosmos",
     "location": "Lisco, Alabama"
   },
   {
     "id": 1,
     "name": "CSM - 02",
-    "picture": "images/3.jpg",
+    "picture": "images/5.jpg",
     "age": 3,
-    "breed": "Scottish Terrier",
+    "breed": "Orbital Apes",
     "location": "Lisco, Alabama"
   },
   {
     "id": 2,
     "name": "CSM - 03",
-    "picture": "images/3.jpg",
+    "picture": "images/4.jpg",
     "age": 3,
-    "breed": "Scottish Terrier",
+    "breed": "Atom",
     "location": "Lisco, Alabama"
   },
   {
     "id": 3,
     "name": "CSM - 04",
-    "picture": "images/3.jpg",
+    "picture": "images/6.png",
     "age": 3,
-    "breed": "Scottish Terrier",
+    "breed": "Osmosis Lab",
     "location": "Lisco, Alabama"
   },
   {
     "id": 4,
     "name": "CSM - 05",
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/7.png",
     "age": 2,
-    "breed": "French Bulldog",
+    "breed": "Osmosis Lab",
     "location": "Gerber, South Dakota"
   },
   {
     "id": 5,
     "name": "CSM - 06",
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/8.png",
     "age": 3,
-    "breed": "French Bulldog",
+    "breed": "CMDX",
     "location": "Innsbrook, Illinois"
   },
   {
     "id": 6,
     "name": "CSM - 07",
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/9.png",
     "age": 3,
-    "breed": "Golden Retriever",
+    "breed": "CMDX",
     "location": "Soudan, Louisiana"
   },
   {
     "id": 7,
     "name": "CSM - 08",
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/13.png",
     "age": 3,
-    "breed": "Golden Retriever",
+    "breed": "Cosmos Node",
     "location": "Jacksonwald, Palau"
   },
   {
     "id": 8,
     "name": "CSM - 09",
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/3.jpg",
     "age": 2,
-    "breed": "French Bulldog",
+    "breed": "Osmosis Lab",
     "location": "Honolulu, Hawaii"
   },
   {
     "id": 9,
     "name": "CSM - 10",
-    "picture": "images/boxer.jpeg",
+    "picture": "images/4.jpg",
     "age": 3,
-    "breed": "Boxer",
+    "breed": "Orbital Apes",
     "location": "Matheny, Utah"
   },
   {
     "id": 10,
     "name": "CSM - 11",
-    "picture": "images/boxer.jpeg",
+    "picture": "images/5.jpg",
     "age": 2,
-    "breed": "Boxer",
+    "breed": "Orbital Apes",
     "location": "Tyhee, Indiana"
   },
   {
     "id": 11,
     "name": "CSM - 12",
-    "picture": "images/scottish-terrier.jpeg",
+    "picture": "images/6.png",
     "age": 3,
-    "breed": "Scottish Terrier",
+    "breed": "Cosmos Node",
     "location": "Windsor, Montana"
   },
   {
     "id": 12,
     "name": "CSM - 13",
-    "picture": "images/french-bulldog.jpeg",
+    "picture": "images/7.png",
     "age": 3,
-    "breed": "French Bulldog",
+    "breed": "Atom",
     "location": "Kingstowne, Nevada"
   },
   {
     "id": 13,
     "name": "CSM - 14",
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/8.png",
     "age": 4,
-    "breed": "Golden Retriever",
+    "breed": "Osmosis Lab",
     "location": "Sultana, Massachusetts"
   },
   {
     "id": 14,
     "name": "CSM - 15",
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/9.png",
     "age": 2,
-    "breed": "Golden Retriever",
+    "breed": "Atom",
     "location": "Broadlands, Oregon"
   },
   {
     "id": 15,
     "name": "CSM - 16",
-    "picture": "images/golden-retriever.jpeg",
+    "picture": "images/13.png",
     "age": 2,
-    "breed": "Golden Retriever",
+    "breed": "Atom",
     "location": "Dawn, Wisconsin"
   }
 ]
