@@ -3,7 +3,7 @@ App = {
   contracts: {},
 
   init: async function() {
-    $.getJSON('../avatar.json', function(data) {
+   /* $.getJSON('../avatar.json', function(data) {
       var avatarsRow = $('#avatarsRow');
       var avatarTemplate = $('#avatarTemplate');
 
@@ -18,6 +18,8 @@ App = {
         avatarsRow.append(avatarTemplate.html());
       }
     });
+
+    */
 
     return await App.initWeb3();
   },
@@ -57,7 +59,7 @@ App = {
       App.contracts.Adoption.setProvider(App.web3Provider);
     
       // Use our contract to retrieve and mark the adopted avatars
-      return App.markAdopted();
+      return App.listAvatars();
     });
 
     return App.bindEvents();
@@ -99,6 +101,8 @@ web3.eth.getAccounts(function(error, accounts) {
 
   var account = accounts[0];
 
+  console.log(account);
+
   App.contracts.Adoption.deployed().then(function(instance) {
     adoptionInstance = instance;
     console.log(adoptionInstance.adopters(1));
@@ -111,7 +115,63 @@ web3.eth.getAccounts(function(error, accounts) {
         console.log(err.message);
     });
   });
+  },
+
+  listAvatars: function (){
+
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
+    
+      var account = accounts[0];
+    
+      console.log(account);
+
+      var adoptionInstance;
+
+    App.contracts.Adoption.deployed().then(function(instance) {
+      adoptionInstance = instance;
+
+      return adoptionInstance.getAdopters.call();
+    }).then(function(adopters) {
+      var x = [];
+  
+      for (j = 0; j < adopters.length; j++) {
+          if (adopters[j] == account){
+            //console.log(j);
+            x.push(j);
+          }
+      }
+
+      $.getJSON('../avatar.json', function(data) {
+        var avatarsRow = $('#avatarsRow');
+        var avatarTemplate = $('#avatarTemplate');
+  
+        for (i = 0; i < x.length; i ++) {
+          id = x[i]
+          avatarTemplate.find('.panel-title').text(data[id].name);
+          avatarTemplate.find('img').attr('src', data[i].picture);
+          avatarTemplate.find('.avatar-breed').text(data[i].breed);
+          avatarTemplate.find('.avatar-age').text(data[i].age);
+          avatarTemplate.find('.avatar-location').text(data[i].location);
+          
+  
+          avatarsRow.append(avatarTemplate.html());
+        }
+      });
+  
+
+      
+
+    }).catch(function(err) {
+      console.log(err.message);
+    });
+  });
+
   }
+
+
 
 };
 

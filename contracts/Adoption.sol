@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+// Adoption.deployed().then(function(i) {contract=i;})
 pragma solidity >=0.4.22 <0.8.17;
 
 contract Adoption {
@@ -18,5 +19,11 @@ contract Adoption {
   function getAdopters() public view returns (address[16] memory) {
     return adopters;
   }
+
+  function getOwner(uint id) public view returns (address addr){
+    return addr = adopters[id];
+  }
+
+
 
 }
