@@ -10,7 +10,7 @@ Partendo dal tutorial di [Pet Shop tutorial](http://truffleframework.com/tutoria
     npm install -g truffle
     ```
 
-2. Installa Ganache e configura una nuova blockchain di test.
+2. Installa [Ganache](https://trufflesuite.com/ganache/) e configura una nuova blockchain di test.
 
 3. Effettua il download del repository e apri la cartella su VisualStudio Code.
 
