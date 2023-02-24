@@ -125,32 +125,34 @@ web3.eth.getAccounts(function(error, accounts) {
       }
     
       var account = accounts[0];
-    
-      console.log(account);
+      var myAddress = $('#myAddress');
+
+      myAddress.find('.address').text(account);
 
       var adoptionInstance;
 
-    App.contracts.Adoption.deployed().then(function(instance) {
-      adoptionInstance = instance;
+      App.contracts.Adoption.deployed().then(function(instance) {
+        adoptionInstance = instance;
 
-      return adoptionInstance.getAdopters.call();
-    }).then(function(adopters) {
-      var x = [];
+        return adoptionInstance.getAdopters.call();
+      }).then(function(adopters) {
+       var x = [];
   
-      for (j = 0; j < adopters.length; j++) {
+        for (j = 0; j < adopters.length; j++) {
           if (adopters[j] == account){
             //console.log(j);
             x.push(j);
           }
-      }
+        }
 
       $.getJSON('../avatar.json', function(data) {
         var avatarsRow = $('#avatarsRow');
         var avatarTemplate = $('#avatarTemplate');
+
   
         for (i = 0; i < x.length; i ++) {
           id = x[i]
-          avatarTemplate.find('.panel-title').text(data[id].name);
+          avatarTemplate.find('.panel-title').text(data[i].name);
           avatarTemplate.find('img').attr('src', data[i].picture);
           avatarTemplate.find('.avatar-breed').text(data[i].breed);
           avatarTemplate.find('.avatar-age').text(data[i].age);
