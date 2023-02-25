@@ -3,24 +3,6 @@ App = {
   contracts: {},
 
   init: async function() {
-   /* $.getJSON('../avatar.json', function(data) {
-      var avatarsRow = $('#avatarsRow');
-      var avatarTemplate = $('#avatarTemplate');
-
-      for (i = 0; i < data.length; i ++) {
-        avatarTemplate.find('.panel-title').text(data[i].name);
-        avatarTemplate.find('img').attr('src', data[i].picture);
-        avatarTemplate.find('.avatar-breed').text(data[i].breed);
-        avatarTemplate.find('.avatar-age').text(data[i].age);
-        avatarTemplate.find('.avatar-location').text(data[i].location);
-        avatarTemplate.find('.btn-adopt').attr('data-id', data[i].id);
-
-        avatarsRow.append(avatarTemplate.html());
-      }
-    });
-
-    */
-
     return await App.initWeb3();
   },
 

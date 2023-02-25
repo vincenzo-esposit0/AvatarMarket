@@ -5,7 +5,7 @@ pragma solidity >=0.4.22 <0.8.17;
 contract Adoption {
   address[16] public adopters;
 
-  // Adopting a avatar
+  // Obtain avatar
   function adopt(uint avatarId) public returns (uint) {
 
     require(avatarId >= 0 && avatarId <= 15);
