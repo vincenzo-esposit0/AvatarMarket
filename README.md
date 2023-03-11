@@ -31,4 +31,4 @@ Partendo dal tutorial di [Pet Shop tutorial](http://truffleframework.com/tutoria
     npm run dev
     ```
 
-**NOTE**: 
+**NOTE**: Link alla presentazione interattiva del progetto: [Avatar Market](https://www.canva.com/design/DAFbfoMfouI/cTtr1SxfRTxtbDW4hJsazQ/view)
