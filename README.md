@@ -31,29 +31,28 @@ A list of technologies used within the project:
 
 ## Installation
 ***
-1. Install Truffle.
-    ```javascript
+1. Install Truffle and the project dependencies.
+    ```bash
     npm install -g truffle
+    npm install
     ```
 
-2. Install [Ganache](https://trufflesuite.com/ganache/) And set up a new test blockchain.
+2. Install [Ganache](https://trufflesuite.com/ganache/) and set up a new test blockchain.
 
-3. Download the repository and open the folder in VisualStudio Code.
-
-5. Run the development console.
-    ```javascript
+3. Run the development console.
+    ```bash
     truffle develop
     ```
 
 4. Compile and migrate the smart contracts.
-    ```javascript
+    ```bash
     compile
     migrate
     ```
 
-5. Run the liteserver development server (outside of the development console). Changes to the smart contract must be manually recompiled and migrated.
-    ```javascript
-    // Serves the front-end on http://localhost:3000
+5. Run the lite-server development server (outside of the development console). Changes to the smart contract must be manually recompiled and migrated.
+    ```bash
+    # Serves the front-end on http://localhost:3000
     npm run dev
     ```
 
