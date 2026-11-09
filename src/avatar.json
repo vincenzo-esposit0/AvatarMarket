@@ -2,129 +2,113 @@
   {
     "id": 0,
     "name": "CSM - 01",
-    "picture": "images/3.jpg",
-    "age": 3,
-    "breed": "Cosmos",
-    "location": "Lisco, Alabama"
+    "image": "images/avatars/01.jpg",
+    "collection": "Cosmos",
+    "value": 3
   },
   {
     "id": 1,
     "name": "CSM - 02",
-    "picture": "images/5.jpg",
-    "age": 3,
-    "breed": "Orbital Apes",
-    "location": "Lisco, Alabama"
+    "image": "images/avatars/02.jpg",
+    "collection": "Orbital Apes",
+    "value": 3
   },
   {
     "id": 2,
     "name": "CSM - 03",
-    "picture": "images/4.jpg",
-    "age": 3,
-    "breed": "Atom",
-    "location": "Lisco, Alabama"
+    "image": "images/avatars/06.jpg",
+    "collection": "Atom",
+    "value": 3
   },
   {
     "id": 3,
     "name": "CSM - 04",
-    "picture": "images/6.png",
-    "age": 3,
-    "breed": "Osmosis Lab",
-    "location": "Lisco, Alabama"
+    "image": "images/avatars/07.jpg",
+    "collection": "Osmosis Lab",
+    "value": 3
   },
   {
     "id": 4,
     "name": "CSM - 05",
-    "picture": "images/7.png",
-    "age": 2,
-    "breed": "Osmosis Lab",
-    "location": "Gerber, South Dakota"
+    "image": "images/avatars/13.jpg",
+    "collection": "Osmosis Lab",
+    "value": 2
   },
   {
     "id": 5,
     "name": "CSM - 06",
-    "picture": "images/8.png",
-    "age": 3,
-    "breed": "CMDX",
-    "location": "Innsbrook, Illinois"
+    "image": "images/avatars/03.jpg",
+    "collection": "CMDX",
+    "value": 3
   },
   {
     "id": 6,
     "name": "CSM - 07",
-    "picture": "images/9.png",
-    "age": 3,
-    "breed": "CMDX",
-    "location": "Soudan, Louisiana"
+    "image": "images/avatars/08.jpg",
+    "collection": "CMDX",
+    "value": 3
   },
   {
     "id": 7,
     "name": "CSM - 08",
-    "picture": "images/13.png",
-    "age": 3,
-    "breed": "Cosmos Node",
-    "location": "Jacksonwald, Palau"
+    "image": "images/avatars/12.jpg",
+    "collection": "Cosmos Node",
+    "value": 3
   },
   {
     "id": 8,
     "name": "CSM - 09",
-    "picture": "images/3.jpg",
-    "age": 2,
-    "breed": "Osmosis Lab",
-    "location": "Honolulu, Hawaii"
+    "image": "images/avatars/06.jpg",
+    "collection": "Osmosis Lab",
+    "value": 2
   },
   {
     "id": 9,
     "name": "CSM - 10",
-    "picture": "images/4.jpg",
-    "age": 3,
-    "breed": "Orbital Apes",
-    "location": "Matheny, Utah"
+    "image": "images/avatars/09.jpg",
+    "collection": "Orbital Apes",
+    "value": 3
   },
   {
     "id": 10,
     "name": "CSM - 11",
-    "picture": "images/5.jpg",
-    "age": 2,
-    "breed": "Orbital Apes",
-    "location": "Tyhee, Indiana"
+    "image": "images/avatars/04.jpg",
+    "collection": "Orbital Apes",
+    "value": 2
   },
   {
     "id": 11,
     "name": "CSM - 12",
-    "picture": "images/6.png",
-    "age": 3,
-    "breed": "Cosmos Node",
-    "location": "Windsor, Montana"
+    "image": "images/avatars/10.jpg",
+    "collection": "Cosmos Node",
+    "value": 3
   },
   {
     "id": 12,
     "name": "CSM - 13",
-    "picture": "images/7.png",
-    "age": 3,
-    "breed": "Atom",
-    "location": "Kingstowne, Nevada"
+    "image": "images/avatars/11.jpg",
+    "collection": "Atom",
+    "value": 3
   },
   {
     "id": 13,
     "name": "CSM - 14",
-    "picture": "images/8.png",
-    "age": 4,
-    "breed": "Osmosis Lab",
-    "location": "Sultana, Massachusetts"
+    "image": "images/avatars/14.jpg",
+    "collection": "Osmosis Lab",
+    "value": 4
   },
   {
     "id": 14,
     "name": "CSM - 15",
-    "picture": "images/9.png",
-    "age": 2,
-    "breed": "Atom",
-    "location": "Broadlands, Oregon"
+    "image": "images/avatars/13.jpg",
+    "collection": "Atom",
+    "value": 2
   },
   {
     "id": 15,
     "name": "CSM - 16",
-    "picture": "images/13.png",
-    "age": 2,
-    "breed": "Atom",
-    "location": "Dawn, Wisconsin"
+    "image": "images/avatars/05.jpg",
+    "collection": "Atom",
+    "value": 2
   }
 ]

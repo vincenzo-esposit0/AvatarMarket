@@ -1,29 +1,35 @@
 // SPDX-License-Identifier: MIT
-// Adoption.deployed().then(function(i) {contract=i;})
-pragma solidity >=0.4.22 <0.8.17;
+pragma solidity >=0.5.0 <0.9.0;
 
+/// @title Avatar Market
+/// @notice Each of the 16 cosmonaut avatars can be claimed exactly once.
 contract Adoption {
+  uint public constant SUPPLY = 16;
+
+  /// @notice Owner of each avatar; address(0) means the avatar is still available.
   address[16] public adopters;
 
-  // Obtain avatar
-  function adopt(uint avatarId) public returns (uint) {
+  event Adopted(uint indexed avatarId, address indexed owner);
 
-    require(avatarId >= 0 && avatarId <= 15);
+  /// @notice Claim an available avatar for the caller.
+  function adopt(uint avatarId) public returns (uint) {
+    require(avatarId < SUPPLY, "Invalid avatar id");
+    require(adopters[avatarId] == address(0), "Avatar already claimed");
 
     adopters[avatarId] = msg.sender;
+    emit Adopted(avatarId, msg.sender);
 
     return avatarId;
   }
 
-  // Retrieving the adopters
+  /// @notice All owners at once, so the UI needs a single call.
   function getAdopters() public view returns (address[16] memory) {
     return adopters;
   }
 
-  function getOwner(uint id) public view returns (address addr){
-    return addr = adopters[id];
+  /// @notice Owner of a single avatar.
+  function getOwner(uint avatarId) public view returns (address) {
+    require(avatarId < SUPPLY, "Invalid avatar id");
+    return adopters[avatarId];
   }
-
-
-
 }

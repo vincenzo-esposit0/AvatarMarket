@@ -1,70 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>CSM - Shop</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avatar Market</title>
+  <meta name="description" content="A decentralized marketplace for pixel-art cosmonaut avatars, built on an Ethereum smart contract.">
+  <meta name="theme-color" content="#07080f">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta property="og:title" content="Avatar Market">
+  <meta property="og:description" content="A decentralized marketplace for pixel-art cosmonaut avatars, built on an Ethereum smart contract.">
+  <meta property="og:image" content="https://vincenzo-esposit0.github.io/AvatarMarket/images/preview.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍🚀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#market" data-view-link="market">
+        <span class="brand__mark" aria-hidden="true">◐</span>
+        <span>Avatar<span class="brand__accent">Market</span></span>
+      </a>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-push-2">
-          <h1 class="text-center">
-            <img src="./images/ID_Logo.png" alt="" width="250" height="180">
-          </h1>
-          <hr/>
-          
-          <h3 class="text-center">
-            <a href="index.html">Home</a>
-            |
-            <a href="profile.html">Profile</a>
-          </h3>
+      <nav class="tabs" aria-label="Sections">
+        <a class="tabs__item" href="#market" data-view-link="market">Market</a>
+        <a class="tabs__item" href="#collection" data-view-link="collection">
+          My collection <span class="tabs__count" id="ownedCount">0</span>
+        </a>
+      </nav>
 
-          <br/>
+      <button class="wallet" id="walletButton" type="button">
+        <span class="wallet__dot" aria-hidden="true"></span>
+        <span class="wallet__label" id="walletLabel">Connect wallet</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="banner" id="modeBanner" role="status" hidden></div>
+
+    <!-- MARKET -->
+    <section id="view-market" class="view">
+      <div class="hero">
+        <div class="hero__copy">
+          <p class="eyebrow">Cosmos ecosystem · On-chain ownership</p>
+          <h1>Collect cosmonauts,<br><span class="gradient">own them on-chain.</span></h1>
+          <p class="lead">
+            Sixteen pixel-art astronauts, each one claimable exactly once.
+            Ownership is recorded by a Solidity smart contract — your wallet address
+            becomes the avatar's owner, visible to everyone.
+          </p>
+        </div>
+        <dl class="stats">
+          <div class="stat"><dt>Total supply</dt><dd id="statTotal">16</dd></div>
+          <div class="stat"><dt>Available</dt><dd id="statAvailable">–</dd></div>
+          <div class="stat"><dt>Claimed</dt><dd id="statClaimed">–</dd></div>
+        </dl>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" id="filters" role="group" aria-label="Filter by collection"></div>
+        <label class="toggle">
+          <input type="checkbox" id="onlyAvailable">
+          <span>Only available</span>
+        </label>
+      </div>
+
+      <div class="grid" id="marketGrid"></div>
+      <div class="empty" id="marketEmpty" hidden>
+        <div class="empty__icon" aria-hidden="true">🔭</div>
+        <h2>Nothing here</h2>
+        <p>No avatars match the current filters.</p>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="view-collection" class="view" hidden>
+      <div class="hero hero--compact">
+        <div class="hero__copy">
+          <p class="eyebrow">Your wallet</p>
+          <h1>My collection</h1>
+          <p class="address" id="myAddress">No wallet connected</p>
         </div>
       </div>
-
-      <div id="avatarsRow" class="row">
-        <!-- avatars load -->
+      <div class="grid" id="collectionGrid"></div>
+      <div class="empty" id="collectionEmpty" hidden>
+        <div class="empty__icon" aria-hidden="true">🛰️</div>
+        <h2>No cosmonauts yet</h2>
+        <p>Claim your first avatar from the market — it will show up here.</p>
+        <a class="btn btn--primary" href="#market" data-view-link="market">Browse the market</a>
       </div>
-    </div>
+    </section>
 
-    <div id="avatarTemplate" style="display: none;">
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="panel panel-default panel-avatar">
-          <div class="panel-heading">
-            <h3 class="panel-title">Scrappy</h3>
-          </div>
-          <div class="panel-body">
-            <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg" data-holder-rendered="true">
-            <br/><br/>
-            <strong>Author</strong>: <span class="avatar-breed">Golden Retriever</span><br/>
-            <strong>Value</strong>: <span class="avatar-age">3</span><br/>
-            <button class="btn btn-default btn-adopt" type="button" data-id="0">Available</button>
-          </div>
+    <!-- HOW IT WORKS -->
+    <section class="how" aria-labelledby="howTitle">
+      <h2 id="howTitle">How it works</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__n">01</span>
+          <h3>Connect</h3>
+          <p>MetaMask (or any injected wallet) signs transactions. Without a wallet the page runs in <strong>demo mode</strong>, simulating the contract in your browser.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">02</span>
+          <h3>Claim</h3>
+          <p>Clicking <em>Claim</em> calls <code>adopt(avatarId)</code> on the <code>Adoption</code> contract, which stores <code>msg.sender</code> as the owner — and reverts if the avatar is already taken.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">03</span>
+          <h3>Verify</h3>
+          <p>The UI reads <code>getAdopters()</code> — a fixed array of 16 addresses — to show who owns what, straight from the chain.</p>
+        </li>
+      </ol>
+      <details class="code">
+        <summary>View the smart contract</summary>
+<pre><code><span class="c">// SPDX-License-Identifier: MIT</span>
+<span class="k">contract</span> Adoption {
+  <span class="k">uint public constant</span> SUPPLY = 16;
+  <span class="k">address</span>[16] <span class="k">public</span> adopters;
+
+  <span class="k">event</span> Adopted(<span class="k">uint indexed</span> avatarId, <span class="k">address indexed</span> owner);
+
+  <span class="k">function</span> adopt(<span class="k">uint</span> avatarId) <span class="k">public returns</span> (<span class="k">uint</span>) {
+    <span class="k">require</span>(avatarId &lt; SUPPLY, <span class="s">"Invalid avatar id"</span>);
+    <span class="k">require</span>(adopters[avatarId] == <span class="k">address</span>(0), <span class="s">"Avatar already claimed"</span>);
+    adopters[avatarId] = msg.sender;
+    <span class="k">emit</span> Adopted(avatarId, msg.sender);
+    <span class="k">return</span> avatarId;
+  }
+
+  <span class="k">function</span> getAdopters() <span class="k">public view returns</span> (<span class="k">address</span>[16] <span class="k">memory</span>) {
+    <span class="k">return</span> adopters;
+  }
+}</code></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>Built with Solidity, Truffle &amp; ethers.js — Data Security project.</span>
+      <a href="https://github.com/vincenzo-esposit0/AvatarMarket" target="_blank" rel="noopener">Source on GitHub ↗</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card__media">
+        <img alt="" loading="lazy" width="640" height="640">
+        <span class="card__id"></span>
+        <span class="card__badge"></span>
+      </div>
+      <div class="card__body">
+        <div class="card__head">
+          <h3 class="card__name"></h3>
+          <span class="card__collection"></span>
         </div>
+        <div class="card__meta">
+          <div><span class="label">Value</span><span class="card__value"></span></div>
+          <div class="right"><span class="label">Owner</span><span class="card__owner mono"></span></div>
+        </div>
+        <button class="btn card__action" type="button"></button>
       </div>
-    </div>
+    </article>
+  </template>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/truffle-contract.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js" integrity="sha384-6Zl0Pc8zjSz8KvmNeXRvUQgY4ryFb+BwDvKCmLYcBME0joAaru491tQgi9B7zsMM" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
 </html>

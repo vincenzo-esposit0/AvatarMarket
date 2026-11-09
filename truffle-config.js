@@ -1,14 +1,20 @@
 module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
-  // for more about customizing your Truffle configuration!
   networks: {
-    development: {
+    // Ganache GUI: `truffle migrate --network ganache`
+    // (no "development" network, so `truffle test` uses Truffle's built-in chain)
+    ganache: {
       host: "127.0.0.1",
       port: 7545,
-      network_id: "*" // Match any network id
+      network_id: "*",
     },
+    // `truffle develop`
     develop: {
-      port: 8545
-    }
-  }
+      port: 8545,
+    },
+  },
+  compilers: {
+    solc: {
+      version: "0.5.16",
+    },
+  },
 };

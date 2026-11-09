@@ -1,18 +1,24 @@
 {
-  "name": "pet-shop",
+  "name": "avatar-market",
   "version": "1.0.0",
-  "description": "",
-  "main": "truffle.js",
+  "description": "A decentralized marketplace for pixel-art cosmonaut avatars, built with Solidity and ethers.js.",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "truffle compile",
+    "migrate": "truffle migrate --network ganache",
+    "test": "truffle test"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Vincenzo Esposito",
+  "license": "MIT",
   "devDependencies": {
     "lite-server": "^2.3.0"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vincenzo-esposit0/AvatarMarket.git"
   }
 }
