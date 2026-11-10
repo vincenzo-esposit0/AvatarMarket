@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="docs/images/logo.png" alt="Logo" width="140">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/logo-wordmark-dark.svg">
+    <img src="docs/images/logo-wordmark-light.svg" alt="Avatar Market" width="420">
+  </picture>
 </p>
-
-<h1 align="center">Avatar Market</h1>
 
 <p align="center">
   A decentralized marketplace for pixel-art cosmonaut avatars, built on an Ethereum smart contract.

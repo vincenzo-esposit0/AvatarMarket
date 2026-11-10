@@ -82,16 +82,7 @@ code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 6px; }
   letter-spacing: -0.02em;
   text-decoration: none;
 }
-.brand__mark {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #fff;
-  font-size: 18px;
-}
+.brand__mark { display: block; width: 32px; height: 32px; }
 .brand__accent { color: var(--muted); font-weight: 500; }
 
 .tabs { display: flex; gap: 4px; margin-right: auto; }
@@ -418,7 +409,7 @@ h1 {
 @media (max-width: 640px) {
   .topbar__inner { flex-wrap: wrap; height: auto; gap: 10px; padding: 12px 0; }
   .brand { margin-right: auto; font-size: 1rem; gap: 8px; }
-  .brand__mark { width: 28px; height: 28px; font-size: 16px; }
+  .brand__mark { width: 28px; height: 28px; }
   .tabs { order: 3; width: 100%; margin: 0; }
   .tabs__item { flex: 1; justify-content: center; }
   .wallet { gap: 8px; padding: 7px 12px; font-size: 0.8rem; }
